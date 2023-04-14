@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "dlsiteClickUrlAnalysis",
+  "version": "0.0.1",
+
+  "description": "DLSite のサービス別売上情報のクリックURLの作品名を取得し表示します。",
+
+  "icons": {
+    "128": "icons/128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.dlsite.com/*/mypage/affiliate/sales/=/show/click/*"
+      ],
+      "js": ["jquery-3.6.4.min.js", "dlsiteClickUrlAnalysis.js"]
+    }
+  ]
+}
