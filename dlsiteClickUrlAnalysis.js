@@ -11,7 +11,10 @@ $(function() {
       var event = $(this);
       var originalText = event.text();
       // GET 値の前までを取得
-      var targetPageUrl = originalText.match(/(.*)\/\?/)[1];
+      var targetPageUrl = '';
+      if (originalText.match(/(.*)\/\?/)) {
+        targetPageUrl = originalText.match(/(.*)\/\?/)[1];
+      }
       var matomeNumber = '';
       var title = '';
       var matomeTitle = '';
@@ -53,6 +56,11 @@ $(function() {
    * html からタイトルを取得する
    */
   function getTitle(str) {
-    return str.match(/<title>(.*)<\/title>/)[1];
+    var result = '';
+    if (str.match(/<title>(.*)<\/title>/)) {
+      result = str.match(/<title>(.*)<\/title>/)[1];
+    }
+
+    return result;
   }
 });
