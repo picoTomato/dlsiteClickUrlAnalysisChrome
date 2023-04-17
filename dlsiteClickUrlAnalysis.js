@@ -49,6 +49,10 @@ $(function() {
           event.html(originalText + '<br><b>' + title + '</b>');
         }
       });
+
+      // クリック URL の取得ボタンを削除
+      $('#af_report_data th:first').html('URL');
+
     });
   });
 
